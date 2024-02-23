@@ -26,7 +26,7 @@ app.post('/documents', (req, res) => __awaiter(void 0, void 0, void 0, function*
     const { title, description, content } = req.body;
     yield (0, dataCollectionService_1.addDocument)(title, description, content);
 }));
-app.post('/documents', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post('/documents/query', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { query } = req.body;
     const documents = yield (0, dataCollectionService_1.queryDocuments)(query);
     return res.send({ documents });
