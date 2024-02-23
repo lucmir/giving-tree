@@ -19,7 +19,7 @@ app.post('/documents', async (req: Request, res: Response) => {
   await addDocument(title, description, content); 
 });
 
-app.post('/documents', async (req: Request, res: Response) => {
+app.post('/documents/query', async (req: Request, res: Response) => {
   const { query }  = req.body;
   const documents = await queryDocuments(query);
   return res.send({ documents });
