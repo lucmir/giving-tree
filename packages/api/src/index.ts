@@ -16,6 +16,9 @@ app.get('/', (_req: Request, res: Response) => {
 
 app.post('/documents', async (req: Request, res: Response) => {
   const { title, description, content }: Document = req.body;
+  if (!title || !content) {
+    return res.status(400).send('Title and content are required');
+  }
   await addDocument(title, description, content); 
 });
 
