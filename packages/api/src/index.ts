@@ -20,6 +20,7 @@ app.post('/documents', async (req: Request, res: Response) => {
     return res.status(400).send('Title and content are required');
   }
   await addDocument(title, description, content); 
+  return res.send({ message: 'Document added', success: true });
 });
 
 app.post('/documents/query', async (req: Request, res: Response) => {

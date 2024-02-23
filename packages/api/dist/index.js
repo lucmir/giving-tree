@@ -28,6 +28,7 @@ app.post('/documents', (req, res) => __awaiter(void 0, void 0, void 0, function*
         return res.status(400).send('Title and content are required');
     }
     yield (0, dataCollectionService_1.addDocument)(title, description, content);
+    return res.send({ message: 'Document added', success: true });
 }));
 app.post('/documents/query', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { query } = req.body;
